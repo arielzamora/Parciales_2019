@@ -1,0 +1,22 @@
+  <table >
+    <th>Descripcion</th>
+    <th>Precio</th>
+    <th>Vencimiento</th>
+    <th>Tipo</th>
+    <th>Foto</th>
+    <th>Boton</th>
+
+    <tr *ngFor="let producto of productos">
+      <td width="20%">{{producto.descripcion}}</td>
+      <td width="10%">{{producto.precio}}</td>
+      <td width="20%">{{producto.fechaDeVencimiento}}</td>
+      <td width="10%">{{producto.tipo}}</td>
+      <td width="20%"><img src="{{producto.rutaDeFoto}}" alt="" height="10%" width="40%"></td>
+      <td width="20%"><app-boton-borrar [producto]="producto" (seCreo) = "hacerAlgo($event)"></app-boton-borrar></td>
+    </tr>
+  </table>
+
+  <app-buscador (busqueda)='buscar($event)'></app-buscador>
+  <router-outlet (alta)='nuevoProd($event)'></router-outlet>
+
+

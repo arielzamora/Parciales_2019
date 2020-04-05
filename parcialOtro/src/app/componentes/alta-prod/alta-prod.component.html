@@ -1,0 +1,32 @@
+<div class='container'>
+    <form>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Nombre del producto</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="descripcion" [(ngModel)]='nombre'>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">Precio</label>
+            <input type="number" class="form-control" id="precio" min=1 max=10000 name="precio" [(ngModel)]='precio'>
+        </div>
+        <div class="form-group">
+                <label for="formGroupExampleInput2">Vencimiento</label>
+                <input type="date" class="form-control" id="fecha" name='fechaDeVencimiento' [(ngModel)]='fecha'>
+            </div>
+        <label for="">Tipo</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="tipo1" value="Solido" name="tipo" [(ngModel)]='tipo'>
+            <label class="form-check-label" for="exampleRadios1">
+                Solido
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="tipo2" value="Liquido" name="tipo" [(ngModel)]='tipo'>
+            <label class="form-check-label" for="exampleRadios2">
+                Liquido
+            </label>
+        </div>
+        <button (click)='agregar()'>Enviar</button>
+    </form>
+</div>
+<script>document.getElementById('formGroupExampleInput2').setAttribute('min', Date('NOW'));
+        console.log(Date('NOW'))</script>
